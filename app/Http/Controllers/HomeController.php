@@ -9,7 +9,8 @@ class HomeController extends Controller
     function index()
     {
         $pageTitle = 'Home';
+        dd($pageTitle);
 
-        return view('home', ['pageTitle' => $pageTitle]);
+        return view('home', compact('pageTitle'));
     }
 }
