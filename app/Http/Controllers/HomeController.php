@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function index()
-    {
-        $pageTitle = 'Home';
-        dd($pageTitle);
+{
+    $pageTitle = 'Home';
 
-        return view('home', compact('pageTitle'));
-    }
+    return view('home', compact('pageTitle'));
+}
 }

@@ -1,0 +1,265 @@
+.sidebar {
+    position: absolute;
+    padding-top: 1%;
+    top: 68px;
+    left: -250px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #303030;
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.sidebar.active {
+    left: 0 !important;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-link i {
+    margin-right: 8px;
+    /* Space between icon and text */
+    font-size: 1.2em;
+    /* Adjust icon size */
+    color: inherit;
+    /* Use the text color of the link */
+}
+
+.sidebar .nav-link.active i {
+    color: #007bff;
+    /* Change icon color when active */
+}
+
+.sidebar-header .navbar-brand {
+    color: #fff;
+}
+
+.nav {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: #fff;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.main-content {
+    padding-top: 4%;
+    transition: margin-left 0.5s;
+    overflow-y: auto;
+}
+
+.main-content.shifted {
+    margin-left: 250px;
+    /* Adjust the left margin to be the width of the sidebar */
+}
+
+.container-home {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container-home {
+        padding: 0px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bi-house-fill {
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-home {
+        padding: 5px;
+    }
+
+    .d-flex {
+        padding: 10px;
+    }
+
+    .bi-house-fill {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+}
+
+.navbar {
+    width: 100%;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+.navbar-nav {
+    margin-right: 1rem;
+}
+
+#sidebar-toggle {
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    border: 2px solid transparent;
+    /* Initial border to maintain layout */
+    border-radius: 4px;
+    /* Optional: Add some border radius */
+    transition: border-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+#sidebar-toggle:hover {
+    border-color: #3939396c;
+    /* Change this to your desired outline color */
+    background-color: rgba(0, 5, 11, 0.1);
+    /* Optional: Add a background color on hover */
+}
+
+.search-form-container .form-control {
+    min-width: 280px;
+    margin-left: -340px;
+}
+
+.search-form-container .btn {
+    min-width: 120px;
+}
+
+.show-label {
+    padding-bottom: 3%;
+    font-size: 16px;
+    /* Change font size */
+    margin-right: 10px;
+    /* Adjust margin if needed */
+}
+
+#pageSelect {
+    width: 120px; /* Set a fixed width for the dropdown */
+    padding-bottom: 6px;
+    padding-left: 10px; /* Add padding for better touch targets */
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 0.25rem; /* Rounded corners */
+    background-color: #ffffff; /* Background color */
+    color: #495057; /* Text color */
+    font-size: 14px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transition for focus effect */
+}
+
+#pageSelect:focus {
+    border-color: #80bdff; /* Border color on focus */
+    outline: 0; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Shadow effect on focus */
+}
+
+.form-select {
+    margin-bottom: 1%;
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+}
+
+.btn-custom-yellow {
+    background-color: #ffc107;
+    /* Custom yellow */
+    color: white;
+    /* Text color */
+    border: 2px solid transparent;
+    /* Initial border */
+    transition: border 0.3s ease;
+    /* Smooth transition for border */
+}
+
+.btn-custom-yellow:hover {
+    border: 2px solid #ffca2c;
+    /* Border color on hover */
+}
+
+.btn-custom-red {
+    background-color: #dc3545;
+    /* Custom red */
+    color: white;
+    /* Text color */
+    border: 2px solid transparent;
+    /* Initial border */
+    transition: border 0.3s ease;
+    /* Smooth transition for border */
+}
+
+.btn-custom-red:hover {
+    border: 2px solid #e63946;
+    /* Border color on hover */
+}
+
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: white;
+    /* White background */
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    /* Border */
+    width: 300px;
+    /* Width of the modal */
+    text-align: center;
+    /* Center text */
+}
+
+.btn-confirm {
+    margin: 5px;
+}
+
+.btn-cancel {
+    margin: 5px;
+}
