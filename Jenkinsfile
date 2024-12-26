@@ -13,7 +13,7 @@ pipeline {
                 script {
                     // Pull the existing Docker image if needed
                     // This step can be omitted if you are sure the image is already available
-                    docker.image("unta/fauzan-inventoryeskrimo:latest").pull()
+                    docker.image("unta/inventory-management:latest").pull()
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run tests using Docker Compose
-                    bat 'docker-compose run --rm --user www-data app php artisan test'
+                    bat 'docker-compose run --rm app php artisan test'
                 }
             }
         }

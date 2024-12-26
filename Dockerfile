@@ -24,10 +24,10 @@ COPY . .
 RUN chown -R www-data:www-data /var/www
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Run Composer
-RUN composer instal
+RUN composer install
 
 # Change ownership of storage and cache directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
@@ -38,6 +38,10 @@ RUN git config --global --add safe.directory /var/www
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
+
+RUN npm install
+
+RUN npm run build
 
 # Expose port 9000 for PHP-FPM
 EXPOSE 8080
