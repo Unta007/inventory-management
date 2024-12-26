@@ -24,7 +24,10 @@ COPY . .
 RUN chown -R www-data:www-data /var/www
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+
+# Run Composer
+RUN composer instal
 
 # Change ownership of storage and cache directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
