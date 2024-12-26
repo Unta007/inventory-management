@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run tests using Docker Compose
-                    bat 'docker-compose run --rm app php artisan test'
+                    bat 'docker-compose run --rm --user www-data app php artisan test'
                 }
             }
         }
