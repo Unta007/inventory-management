@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // Run tests inside the pulled Docker image
                     docker.image("unta/fauzan-inventoryeskrimo:latest").inside {
-                        sh 'npm test' // Replace with your actual test command
+                        sh 'vendor/bin/phpunit' // Replace with your actual test command
                     }
                 }
             }
