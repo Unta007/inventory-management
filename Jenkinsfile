@@ -39,5 +39,13 @@ pipeline {
             // Clean up the Docker containers after the build
             sh 'docker-compose down'
         }
+        success {
+            // Notify on success (e.g., send an email or Slack message)
+            echo 'Deployment successful!'
+        }
+        failure {
+            // Notify on failure
+            echo 'Deployment failed!'
+        }
     }
 }
