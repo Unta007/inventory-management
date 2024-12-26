@@ -8,9 +8,9 @@ services:
         container_name: laravel_app
         restart: unless-stopped
         volumes:
-        - .:/var/www
+            - .:/var/www
         networks:
-        - laravel
+            - laravel
 
     db:
         image: mysql:8.0
@@ -27,7 +27,6 @@ services:
             - laravel
         ports:
             - "3306:3306"
-
 
     webserver:
         image: nginx:alpine
