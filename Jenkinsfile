@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Run tests inside the pulled Docker image
-                    docker.image("fauzan-inventoryeskrimo:latest").inside {
+                    docker.image("unta/fauzan-inventoryeskrimo:latest").inside {
                         sh 'npm test' // Replace with your actual test command
                     }
                 }
@@ -29,7 +29,7 @@ pipeline {
                 script {
                     // Deploy the Docker image (this could be pushing to a registry or running it)
                     // Example: Running the container
-                    docker.image("fauzan-inventoryeskrimo").run('-d -p 8080:8080') // Adjust as needed
+                    docker.image("unta/fauzan-inventoryeskrimo:latest").run('-d -p 8080:8080') // Adjust as needed
                 }
             }
         }
