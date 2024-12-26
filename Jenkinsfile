@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/Unta007/inventory-management.git'
+                git branch: 'main', git credentialsId: 'github-credentials', url: 'https://github.com/Unta007/inventory-management.git'
             }
         }
         stage('Pull Existing Docker Image') {
