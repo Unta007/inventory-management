@@ -17,14 +17,14 @@ pipeline {
                 }
             }
         }
-        stage('Install Composer Dependencies') {
-            steps {
-                script {
-                    // Install Composer dependencies
-                    bat 'docker-compose run --rm --user www-data app composer install'
-                }
-            }
-        }
+        // stage('Install Composer Dependencies') {
+        //     steps {
+        //         script {
+        //             // Install Composer dependencies
+        //             bat 'docker-compose run --rm --user www-data app composer install'
+        //         }
+        //     }
+        // }
         stage('Run Tests') {
             steps {
                 script {
