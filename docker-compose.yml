@@ -7,6 +7,7 @@ services:
         container_name: laravel_app
         restart: unless-stopped
         volumes:
+            - .:/var/www
             - ./storage:/var/www/storage
             - ./bootstrap/cache:/var/www/bootstrap/cache
             # Optionally mount other directories as needed
