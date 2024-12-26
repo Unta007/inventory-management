@@ -20,20 +20,23 @@ WORKDIR /var/www
 # Copy application files
 COPY . .
 
+# Change ownership of the application files
+RUN chown -R www-data:www-data /var/www
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Change ownership of storage and cache directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Set permissions for storage and cache directories
-RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+# Add safe directory for Git
+RUN git config --global --add safe.directory /var/www
 
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
-# Expose port 8080 for PHP-FPM
+# Expose port 9000 for PHP-FPM
 EXPOSE 8080
 
 # Start PHP-FPM
