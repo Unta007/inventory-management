@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Install Composer dependencies
-                    bat 'docker-compose run --rm app composer install'
+                    bat 'docker-compose run --rm --user www-data app composer install'
                 }
             }
         }

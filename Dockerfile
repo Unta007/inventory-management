@@ -26,6 +26,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Change ownership of storage and cache directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+# Set permissions for storage and cache directories
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
