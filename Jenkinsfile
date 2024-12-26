@@ -10,7 +10,7 @@ pipeline {
         stage('Pull Existing Docker Image') {
             steps {
                 script {
-                    docker.image("fauzan-inventoryeskrimo:latest").pull()
+                    docker.image("fauzan-inventoryeskrimo").pull()
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Run tests inside the pulled Docker image
-                    docker.image("fauzan-inventoryeskrimo:latest").inside {
+                    docker.image("fauzan-inventoryeskrimo").inside {
                         sh 'npm test' // Replace with your actual test command
                     }
                 }
