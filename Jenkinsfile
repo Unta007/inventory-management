@@ -39,4 +39,5 @@ pipeline {
             // Clean up the Docker containers after the build
             sh 'docker-compose down'
         }
+    }
 }
