@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/Unta007/inventory-management.git'
+                url: 'https://github.com/Unta007/inventory-management.git'
             }
         }
         stage('Pull Existing Docker Image') {
             steps {
                 script {
-                    // Pull the existing Docker image
                     docker.image("fauzan-inventoryeskrimo:latest").pull()
                 }
             }
