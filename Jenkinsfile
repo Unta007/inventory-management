@@ -10,7 +10,7 @@ pipeline {
         stage('Pull Existing Docker Image') {
             steps {
                 script {
-                    docker.image("fauzan-inventoryeskrimo:latest").pull()
+                    docker.image("unta/fauzan-inventoryeskrimo:latest").pull()
                 }
             }
         }
