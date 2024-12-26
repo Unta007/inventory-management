@@ -17,14 +17,6 @@ pipeline {
                 }
             }
         }
-        // stage('Install Composer Dependencies') {
-        //     steps {
-        //         script {
-        //             // Install Composer dependencies
-        //             bat 'docker-compose run --rm --user www-data app composer install'
-        //         }
-        //     }
-        // }
         stage('Run Tests') {
             steps {
                 script {
@@ -42,4 +34,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            // Clean up the Docker containers after the build
+            sh 'docker-compose down'
+        }
 }
