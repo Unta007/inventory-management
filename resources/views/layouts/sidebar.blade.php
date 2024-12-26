@@ -20,7 +20,7 @@ $currentRouteName = Route::currentRouteName();
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('profile') }}" class="nav-link {{ $currentRouteName == 'profile' ? 'active' : '' }}">
+            <a href="{{ route('kitchen.index') }}" class="nav-link {{ $currentRouteName == 'kitchen' ? 'active' : '' }}">
                 <i class="bi bi-basket3"></i> Kitchen Section
             </a>
         </li>

@@ -20,7 +20,7 @@ $currentRouteName = Route::currentRouteName();
             </a>
         </li>
         <li class="nav-item">
-            <a href="<?php echo e(route('profile')); ?>" class="nav-link <?php echo e($currentRouteName == 'profile' ? 'active' : ''); ?>">
+            <a href="<?php echo e(route('kitchen.index')); ?>" class="nav-link <?php echo e($currentRouteName == 'kitchen' ? 'active' : ''); ?>">
                 <i class="bi bi-basket3"></i> Kitchen Section
             </a>
         </li>

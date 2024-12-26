@@ -14,7 +14,7 @@ class BeverageController extends Controller
      */
     public function index(Request $request)
 {
-    $pageTitle = 'Beverage Catalog';
+    $pageTitle = 'Beverage Section';
 
     $perPage = $request->input('per_page', 5);
 
