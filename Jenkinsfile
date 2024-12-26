@@ -17,6 +17,14 @@ pipeline {
                 }
             }
         }
+        stage('Install Composer Dependencies') {
+            steps {
+                script {
+                    // Install Composer dependencies
+                    sh 'docker-compose run --rm app composer install'
+                }
+            }
+        }
         stage('Run Tests') {
             steps {
                 script {
