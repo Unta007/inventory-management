@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run tests using Docker Compose
-                    sh 'docker-compose run --rm app php artisan test'
+                    bat 'docker-compose run --rm app php artisan test'
                 }
             }
         }
@@ -36,10 +36,6 @@ pipeline {
     }
 
     post {
-        always {
-            // Clean up the Docker containers after the build
-            sh 'docker-compose down'
-        }
         success {
             // Notify on success (e.g., send an email or Slack message)
             echo 'Deployment successful!'
