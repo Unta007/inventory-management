@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the application using Docker Compose
-                    sh 'docker-compose up -d'
+                    bat 'docker-compose up -d'
                 }
             }
         }
