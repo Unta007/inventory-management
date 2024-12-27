@@ -42,6 +42,20 @@ services:
         networks:
             - laravel
 
+    vite:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: laravel-vite
+        container_name: laravel_vite
+        restart: unless-stopped
+        ports:
+            - "3000:3000"  # Expose Vite server
+        volumes:
+            - .:/var/www
+        networks:
+            - laravel
+
 networks:
     laravel:
 
