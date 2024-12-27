@@ -28,8 +28,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Deploy the application using Docker Compose
-                    bat 'docker-compose up -d'
+                    bat 'docker-compose down' // Stop and remove existing containers
+                    bat 'docker-compose up --build -d' // Build and start containers in detached mode
                 }
             }
         }
