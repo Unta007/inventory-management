@@ -21,8 +21,8 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: inventory_master
-            MYSQL_USER: laraveluser
-            MYSQL_PASSWORD: laravelpassword
+            MYSQL_USER: root
+            MYSQL_PASSWORD: password
         volumes:
             - dbdata:/var/lib/mysql
         networks:
