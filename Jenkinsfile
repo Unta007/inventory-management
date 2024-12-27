@@ -8,7 +8,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/Unta007/inventory-management.git'
             }
         }
-        stage('Pull Existing Docker Image') {
+        stage('Pull Docker Image') {
             steps {
                 script {
                     // Pull the existing Docker image if needed
@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests') {
+        stage('Run Test') {
             steps {
                 script {
                     // Run tests using Docker Compose
