@@ -41,7 +41,6 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
 
 RUN npm install
 
-# Expose port 9000 for PHP-FPM
 EXPOSE 8080
 
 CMD ["npm", "run", "dev"]
