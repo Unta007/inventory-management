@@ -12,7 +12,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <span>Welcome, admin 123</span>
+                <span>Welcome, super admin</span>
             </ul>
         </div>
     </div>
@@ -26,5 +26,4 @@
         sidebar.classList.toggle('active');
     }
 </script>
-
 <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\fauzan\inventory-management\resources\views/layouts/navbar.blade.php ENDPATH**/ ?>
