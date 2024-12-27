@@ -12,7 +12,6 @@ pipeline {
             steps {
                 script {
                     // Pull the existing Docker image if needed
-                    // This step can be omitted if you are sure the image is already available
                     docker.image("unta/inventory-management:latest").pull()
                 }
             }
